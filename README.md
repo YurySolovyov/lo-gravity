@@ -7,6 +7,7 @@ Lodash-inspired library for [Gravity language](https://github.com/marcobambini/g
 Currently implemented:
 ```
 Lo.every(collection, iteratee)
+Lo.filter(collection, iteratee)
 Lo.find(collection, iteratee)
 Lo.map(collection, iteratee)
 ```
