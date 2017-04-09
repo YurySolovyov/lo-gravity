@@ -1,0 +1,21 @@
+#include "./src/lo.gravity"
+
+#unittest {
+	name: "Lo.map map";
+	error: NONE;
+	result: '[true,true,true,true,true]';
+};
+
+func main() {
+	var map = [
+    "a": 1,
+    "be": 2,
+    "cee": 3,
+    "deee": 4,
+    "e f g": 5
+  ];
+
+  return Lo.map(map, func(value, key) {
+		return key.length == value;
+	}).String();
+}

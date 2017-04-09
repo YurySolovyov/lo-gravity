@@ -1,0 +1,12 @@
+#include "./src/find.gravity"
+#include "./src/map.gravity"
+
+class Lo {
+  static func find(collection, iteratee) {
+    return Finder.find(collection, iteratee);
+  }
+
+  static func map(collection, iteratee) {
+    return Mapper.map(collection, iteratee);
+  }
+}

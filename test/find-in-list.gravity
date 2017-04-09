@@ -1,0 +1,15 @@
+#include "./src/lo.gravity"
+
+#unittest {
+	name: "Lo.find in list";
+	error: NONE;
+	result: 33;
+};
+
+func main() {
+	var list = [true, false, [], [:], "bar", 33, 42];
+
+	return Lo.find(list, func(item) {
+		return item == 33;
+	});
+}
