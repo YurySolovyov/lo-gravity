@@ -1,0 +1,19 @@
+#include "./src/lo.gravity"
+
+#unittest {
+	name: "Lo.filter always returns new list";
+	error: NONE;
+	result: false;
+};
+
+func main() {
+  // the idea here is that we don't want to even try re-using passed list
+  var list = []
+	var result = Lo.filter(list, func(item) {
+		return true;
+	});
+
+  list.push(42);
+
+  return result.contains(42);
+}

@@ -1,0 +1,19 @@
+#include "./src/lo.gravity"
+
+#unittest {
+	name: "Lo.filter always returns new map";
+	error: NONE;
+	result: true;
+};
+
+func main() {
+  // the idea here is that we don't want to even try re-using passed map
+  var map = [:]
+	var result = Lo.filter(map, func(item) {
+		return true;
+	});
+
+  map['key'] = 'value';
+
+  return result['key'] == null;
+}

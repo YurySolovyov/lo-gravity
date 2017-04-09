@@ -1,0 +1,39 @@
+class Filter {
+  private static func filterList(list, iteratee) {
+    var result = [];
+    if (list.count == 0) {
+      return result;
+    }
+    for (var index in 0..<list.count) {
+      var item = list[index];
+      if (iteratee(item, index, list)) {
+        result[index] = list[index];
+      }
+    }
+    return result;
+  }
+
+  private static func filterMap(map, iteratee) {
+    var result = [:];
+    if (map.count == 0) {
+      return result;
+    }
+    for (var key in map.keys()) {
+      var value = map[key];
+      if (iteratee(value, key, map)) {
+        result[key] = value;
+      }
+    }
+    return result;
+  }
+
+  static func filter(collection, iteratee) {
+    if (collection is List) {
+      return Filter.filterList(collection, iteratee);
+    }
+
+    if (collection is Map) {
+      return Filter.filterMap(collection, iteratee);
+    }
+  }
+}
