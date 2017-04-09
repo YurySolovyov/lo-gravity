@@ -1,6 +1,6 @@
 # lo-gravity.
 
-Lodash-inspired library for Gravity language
+Lodash-inspired library for [Gravity language](https://github.com/marcobambini/gravity)
 
 ### Status: WIP, implementation *may* be naive and contain duplication and/or errors
 
