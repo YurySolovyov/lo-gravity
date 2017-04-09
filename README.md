@@ -1,11 +1,14 @@
-# lo-gravity. WIP
+# lo-gravity.
 
 Lodash-inspired library for Gravity language
 
+### Status: WIP, implementation *may* be naive and contain duplication and/or errors
+
 Currently implemented:
 ```
-Lo.find(collection, interatee)
-Lo.map(collection, interatee)
+Lo.every(collection, iteratee)
+Lo.find(collection, iteratee)
+Lo.map(collection, iteratee)
 ```
 
 Example:

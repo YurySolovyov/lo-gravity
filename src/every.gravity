@@ -1,0 +1,34 @@
+class Every {
+  private static func everyList(list, iteratee) {
+    if (list.count == 0) {
+      return true;
+    }
+    for (var index in 0..<list.count) {
+      var item = list[index];
+      if (!iteratee(item, index, list)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  private static func everyMap(map, iteratee) {
+    for (var key in map.keys()) {
+      var value = map[key];
+      if (!iteratee(value, key, map)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  static func every(collection, iteratee) {
+    if (collection is List) {
+      return Every.everyList(collection, iteratee);
+    }
+
+    if (collection is Map) {
+      return Every.everyMap(collection, iteratee);
+    }
+  }
+}

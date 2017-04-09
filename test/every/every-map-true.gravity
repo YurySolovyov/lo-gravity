@@ -1,0 +1,21 @@
+#include "./src/lo.gravity"
+
+#unittest {
+	name: "Lo.every in map returns true when all pairs pass predicate check";
+	error: NONE;
+	result: true;
+};
+
+func main() {
+	var map = [
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5
+  ];
+
+	return Lo.every(map, func(value, key) {
+		return value is Int && key is String;
+	});
+}

@@ -1,0 +1,13 @@
+#include "./src/lo.gravity"
+
+#unittest {
+	name: "Lo.every returns true for empty list";
+	error: NONE;
+	result: true;
+};
+
+func main() {
+	return Lo.every([], func(item) {
+		return false;
+	});
+}

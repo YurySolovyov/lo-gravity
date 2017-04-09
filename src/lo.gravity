@@ -1,3 +1,4 @@
+#include "./src/every.gravity"
 #include "./src/find.gravity"
 #include "./src/map.gravity"
 
@@ -8,5 +9,9 @@ class Lo {
 
   static func map(collection, iteratee) {
     return Mapper.map(collection, iteratee);
+  }
+
+  static func every(collection, iteratee) {
+    return Every.every(collection, iteratee);
   }
 }
