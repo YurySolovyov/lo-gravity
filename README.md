@@ -11,12 +11,31 @@ Lo.find(collection, iteratee)
 Lo.map(collection, iteratee)
 ```
 
+## Usage
+
+Just `#include "lo.gravity"`:
+
+```
+#include "lo.gravity"
+```
+in our case it is more like this though:
+
+```
+#include "./src/lo.gravity"
+```
+
 Example:
 ```
-var list = [true, false, [], [:], "bar", 33, 42];
+#include "./src/lo.gravity"
 
-// find 33. silly but whatever
-var result = Lo.find(list, func(item) {
-  return item == 33;
-});
+func main() {
+  var list = [true, false, [], [:], "bar", 33, 42];
+
+  // find String
+  var result = Lo.find(list, func(item) {
+    return item is String;
+  });
+
+  System.print(result); // -> "bar"
+}
 ```
