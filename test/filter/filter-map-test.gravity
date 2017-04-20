@@ -1,9 +1,9 @@
 #include "./src/lo.gravity"
 
 #unittest {
-	name: "Lo.filter returns new map with elements passed predicate check";
-	error: NONE;
-	result: 2; // 2 pairs [1: "one", 4: "four"]
+  name: "Lo.filter returns new map with elements passed predicate check";
+  error: NONE;
+  result: 2; // 2 pairs [1: "one", 4: "four"]
 };
 
 func main() {
@@ -14,7 +14,8 @@ func main() {
     4: "four",
     ['5':[5]]: "five"
   ];
-	return Lo.filter(map, func(value, key) {
-		return key is Int && value is String;
-	}).count;
+
+  return Lo.filter(map, func(value, key) {
+    return key is Int && value is String;
+  }).count;
 }

@@ -1,15 +1,15 @@
 #include "./src/lo.gravity"
 
 #unittest {
-	name: "Lo.every in list returns false when some items fail predicate check";
-	error: NONE;
-	result: false;
+  name: "Lo.every in list returns false when some items fail predicate check";
+  error: NONE;
+  result: false;
 };
 
 func main() {
-	var list = [1, 2, 3, 4, 42, 5];
+  var list = [1, 2, 3, 4, 42, 5];
 
-	return Lo.every(list, func(item) {
-		return item is Int && item < 10;
-	});
+  return Lo.every(list, func(item) {
+    return item is Int && item < 10;
+  });
 }

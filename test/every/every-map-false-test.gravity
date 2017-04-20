@@ -1,13 +1,13 @@
 #include "./src/lo.gravity"
 
 #unittest {
-	name: "Lo.every in map returns false when some pairs fail predicate check";
-	error: NONE;
-	result: false;
+  name: "Lo.every in map returns false when some pairs fail predicate check";
+  error: NONE;
+  result: false;
 };
 
 func main() {
-	var map = [
+  var map = [
     "one": 1,
     "two": 2,
     "three": "'3'",
@@ -15,7 +15,7 @@ func main() {
     "five": 5
   ];
 
-	return Lo.every(map, func(value, key) {
-		return value is Int && key is String;
-	});
+  return Lo.every(map, func(value, key) {
+    return value is Int && key is String;
+  });
 }

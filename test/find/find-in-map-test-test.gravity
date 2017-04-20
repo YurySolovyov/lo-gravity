@@ -1,13 +1,13 @@
 #include "./src/lo.gravity"
 
 #unittest {
-	name: "Lo.find in map";
-	error: NONE;
-	result: "bar";
+  name: "Lo.find in map";
+  error: NONE;
+  result: "bar";
 };
 
 func main() {
-	var map = [
+  var map = [
     true: "boolean true",
     false: "false boolean",
     []: "Empty array",
@@ -17,7 +17,7 @@ func main() {
     42: "the answer"
   ];
 
-	return Lo.find(map, func(value, key) {
-		return value == key;
-	});
+  return Lo.find(map, func(value, key) {
+    return value == key;
+  });
 }

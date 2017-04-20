@@ -1,15 +1,15 @@
 #include "./src/lo.gravity"
 
 #unittest {
-	name: "Lo.every in empty map returns true";
-	error: NONE;
-	result: true;
+  name: "Lo.every in empty map returns true";
+  error: NONE;
+  result: true;
 };
 
 func main() {
-	var map = [:];
+  var map = [:];
 
-	return Lo.every(map, func() {
-		return false;
-	});
+  return Lo.every(map, func() {
+    return false;
+  });
 }

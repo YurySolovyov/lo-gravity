@@ -1,14 +1,15 @@
 #include "./src/lo.gravity"
 
 #unittest {
-	name: "Lo.filter returns new list with items passed predicate check";
-	error: NONE;
-	result: "[1,2,3,4,5]";
+  name: "Lo.filter returns new list with items passed predicate check";
+  error: NONE;
+  result: "[1,2,3,4,5]";
 };
 
 func main() {
   var list = [1,2,3,4,5,6,7,8,9,10]
-	return Lo.filter(list, func(item) {
-		return item <= 5;
-	}).String();
+
+  return Lo.filter(list, func(item) {
+    return item <= 5;
+  }).String();
 }
