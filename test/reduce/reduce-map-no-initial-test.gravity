@@ -1,0 +1,22 @@
+#include "./src/lo.gravity"
+
+#unittest {
+  name: "Lo.reduce map";
+  error: NONE;
+  result: 5;
+};
+
+func main() {
+  // counting letters 'a'
+  var map = [
+    'apple': 1,
+    'banana': 3,
+    'broccoli': 0,
+    'pie': 0,
+    'watermelon': 1
+  ];
+
+  return Lo.reduce(map, func(acc, value) {
+    return acc + value;
+  });
+}
