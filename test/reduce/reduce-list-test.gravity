@@ -1,0 +1,15 @@
+#include "./src/lo.gravity"
+
+#unittest {
+  name: "Lo.reduce list";
+  error: NONE;
+  result: 10;
+};
+
+func main() {
+  var list = [1,2,3,4];
+
+  return Lo.reduce(list, func(acc, value) {
+    return acc + value
+  }, 0);
+}

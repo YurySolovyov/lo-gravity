@@ -1,0 +1,35 @@
+class Reduce {
+  private static func reduceList(list, iteratee, initial) {
+    var result = initial;
+    if (list.count == 0) {
+      return result;
+    }
+    for (var index in 0..<list.count) {
+      var item = list[index];
+      result = iteratee(result, item, index, list);
+    }
+    return result;
+  }
+
+  private static func reduceMap(map, iteratee, initial) {
+    var result = initial;
+    if (map.count == 0) {
+      return result;
+    }
+    for (var key in map.keys()) {
+      var value = map[key];
+      result = iteratee(result, value, key, map);
+    }
+    return result;
+  }
+
+  static func reduce(collection, iteratee, initial) {
+    if (collection is List) {
+      return Reduce.reduceList(collection, iteratee, initial);
+    }
+
+    if (collection is Map) {
+      return Reduce.reduceMap(collection, iteratee, initial);
+    }
+  }
+}

@@ -2,6 +2,7 @@
 #include "./src/filter.gravity"
 #include "./src/find.gravity"
 #include "./src/map.gravity"
+#include "./src/reduce.gravity"
 
 class Lo {
   static func find(collection, iteratee) {
@@ -18,5 +19,9 @@ class Lo {
 
   static func filter(collection, iteratee) {
     return Filter.filter(collection, iteratee);
+  }
+
+  static func reduce(collection, iteratee, initial) {
+    return Reduce.reduce(collection, iteratee, initial);
   }
 }
