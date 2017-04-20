@@ -1,0 +1,13 @@
+#include "./src/lo.gravity"
+
+#unittest {
+  name: "Lo.some returns false for empty map";
+  error: NONE;
+  result: false;
+};
+
+func main() {
+  return Lo.some([:], func() {
+    return true;
+  });
+}

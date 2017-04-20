@@ -1,0 +1,15 @@
+#include "./src/lo.gravity"
+
+#unittest {
+  name: "Lo.some returns true at least one list item passes predicate check";
+  error: NONE;
+  result: true;
+};
+
+func main() {
+  var list = [false, 123, 'bar', true, false, false];
+
+  return Lo.some(list, func(item) {
+    return item == true;
+  });
+}

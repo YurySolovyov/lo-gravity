@@ -1,0 +1,20 @@
+#include "./src/lo.gravity"
+
+#unittest {
+  name: "Lo.some returns true at least one map item passes predicate check";
+  error: NONE;
+  result: true;
+};
+
+func main() {
+  var list = [
+    "foo": 3,
+    "bar": [],
+    "bax": [:],
+    "fox": "Hey!"
+  ];
+
+  return Lo.some(list, func(value, key) {
+    return key is String && value is Map;
+  });
+}

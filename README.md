@@ -11,6 +11,7 @@ Lo.filter(collection, iteratee)
 Lo.find(collection, iteratee)
 Lo.map(collection, iteratee)
 Lo.reduce(collection, iteratee, initial)
+Lo.some(collection, iteratee)
 ```
 
 ## Usage
