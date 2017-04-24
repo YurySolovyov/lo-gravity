@@ -1,3 +1,4 @@
+#include "./src/iterator.gravity"
 #include "./src/every.gravity"
 #include "./src/filter.gravity"
 #include "./src/find.gravity"

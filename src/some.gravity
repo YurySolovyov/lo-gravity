@@ -1,37 +1,11 @@
 class Some {
-  private static func someList(list, iteratee) {
-    if (list.count == 0) {
-      return false;
-    }
-    for (var index in 0..<list.count) {
-      var item = list[index];
-      if (iteratee(item, index, list)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
-  private static func someMap(map, iteratee) {
-    if (map.count == 0) {
-      return false;
-    }
-    for (var key in map.keys()) {
-      var item = map[key];
-      if (iteratee(item, key, map)) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   static func some(collection, iteratee) {
-    if (collection is List) {
-      return Some.someList(collection, iteratee);
+    var iterator = Iterator(collection);
+    while (iterator.hasNext()) {
+      if (iterator.next(iteratee)) {
+        return true;
+      }
     }
-
-    if (collection is Map) {
-      return Some.someMap(collection, iteratee);
-    }
+    return false;
   }
 }

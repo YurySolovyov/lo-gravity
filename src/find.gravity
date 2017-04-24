@@ -1,29 +1,15 @@
 class Finder {
-  private static func findInList(list, iteratee) {
-    for (var index in 0..<list.count) {
-      var item = list[index];
-      if (iteratee(item, index, list)) {
-        return item;
-      }
-    }
-  }
-
-  private static func findInMap(map, iteratee) {
-    for (var key in map.keys()) {
-      var value = map[key];
-      if (iteratee(value, key, map)) {
-        return value;
-      }
-    }
-  }
-
   static func find(collection, iteratee) {
-    if (collection is List) {
-      return Finder.findInList(collection, iteratee);
-    }
-
-    if (collection is Map) {
-      return Finder.findInMap(collection, iteratee);
+    var iterator = Iterator(collection);
+    while (iterator.hasNext()) {
+      var result = iterator.next(func(value, key) {
+        if (iteratee(value, key, collection)) {
+          return value;
+        }
+      });
+      if (result) {
+        return result;
+      }
     }
   }
 }

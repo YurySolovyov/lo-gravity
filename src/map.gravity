@@ -1,29 +1,10 @@
 class Mapper {
-  private static func mapList(list, iteratee) {
-    var result = [];
-    for (var index in 0..<list.count) {
-      var value = list[index];
-      result[index] = iteratee(value, index, list);
-    }
-    return result;
-  }
-
-  private static func mapMap(map, iteratee) {
-    var result = [];
-    for (var key in map.keys()) {
-      var value = map[key];
-      result.push(iteratee(value, key, map));
-    }
-    return result;
-  }
-
   static func map(collection, iteratee) {
-    if (collection is List) {
-      return mapList(collection, iteratee);
+    var result = [];
+    var iterator = Iterator(collection);
+    while (iterator.hasNext()) {
+      result.push(iterator.next(iteratee));
     }
-
-    if (collection is Map) {
-      return mapMap(collection, iteratee);
-    }
+    return result;
   }
 }

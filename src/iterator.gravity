@@ -11,10 +11,6 @@ class Iterator {
       return;
     }
 
-    if (collection is List) {
-      self.initList();
-    }
-
     if (collection is Map) {
       initMap();
     }
@@ -40,10 +36,6 @@ class Iterator {
       var key = self.advance();
       return iteratee(collection[key], key, collection);
     }
-  }
-
-  private func initList() {
-    //
   }
 
   private func initMap() {
