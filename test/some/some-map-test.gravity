@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.some returns true at least one map item passes predicate check";
-  error: NONE;
   result: true;
 };
 

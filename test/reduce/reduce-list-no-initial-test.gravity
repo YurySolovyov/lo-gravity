@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.reduce list works with no initial";
-  error: NONE;
   result: 10;
 };
 

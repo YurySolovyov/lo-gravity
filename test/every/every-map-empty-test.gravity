@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.every in empty map returns true";
-  error: NONE;
   result: true;
 };
 

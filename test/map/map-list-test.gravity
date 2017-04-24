@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.map list";
-  error: NONE;
   result: '[2,3,4,5,6]';
 };
 

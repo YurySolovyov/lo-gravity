@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.reduce list";
-  error: NONE;
   result: 10;
 };
 

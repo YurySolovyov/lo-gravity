@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.every in list returns true when all items pass predicate check";
-  error: NONE;
   result: true;
 };
 

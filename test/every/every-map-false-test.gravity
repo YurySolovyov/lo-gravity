@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.every in map returns false when some pairs fail predicate check";
-  error: NONE;
   result: false;
 };
 

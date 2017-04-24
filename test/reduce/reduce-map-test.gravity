@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.reduce map";
-  error: NONE;
   result: 5;
 };
 

@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.filter always returns new map";
-  error: NONE;
   result: true;
 };
 

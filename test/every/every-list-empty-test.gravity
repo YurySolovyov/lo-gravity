@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.every returns true for empty list";
-  error: NONE;
   result: true;
 };
 

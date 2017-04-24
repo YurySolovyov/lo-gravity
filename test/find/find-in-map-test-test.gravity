@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.find in map";
-  error: NONE;
   result: "bar";
 };
 

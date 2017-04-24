@@ -1,0 +1,21 @@
+#include "./src/iterator.gravity"
+
+#unittest {
+  name: "Iterator iterates through list";
+  result: true;
+};
+
+func main() {
+  var list = [1,2,3,4,5];
+  var iterator = Iterator(list);
+  var hasAll = false;
+  var invokations = 0;
+  while(iterator.hasNext()) {
+    var result = iterator.next(func(value, index, collection) {
+      invokations = invokations + 1;
+      return value;
+    });
+    hasAll = list.contains(result);
+  }
+  return hasAll && invokations == list.count;
+}

@@ -1,0 +1,27 @@
+#include "./src/iterator.gravity"
+
+#unittest {
+  name: "Iterator iterates through map";
+  result: true;
+};
+
+func main() {
+  var map = [
+    "zero": 0,
+    "one": 1,
+    "two": 2,
+    "three": 3,
+    "four": 4
+  ];
+  var iterator = Iterator(map);
+  var hasAll = false;
+  var invokations = 0;
+  while(iterator.hasNext()) {
+    var result = iterator.next(func(value, key, collection) {
+      invokations = invokations + 1;
+      return key;
+    });
+    hasAll = map[result] != null;
+  }
+  return hasAll && invokations == map.count;
+}

@@ -1,0 +1,52 @@
+class Iterator {
+  private var done = false;
+  private var index = 0;
+  private var keys = null;
+  private var collection = null;
+
+  func init(items) {
+    collection = items;
+    if (collection.count == 0) {
+      done = true;
+      return;
+    }
+
+    if (collection is List) {
+      self.initList();
+    }
+
+    if (collection is Map) {
+      initMap();
+    }
+  }
+
+  func hasNext() {
+    return !done;
+  }
+
+  func advance() {
+    var current = index;
+    index = current + 1;
+    done = index == collection.count;
+    if (keys is List) {
+      return keys[current];
+    } else {
+      return current;
+    }
+  }
+
+  func next(iteratee) {
+    if (self.hasNext()) {
+      var key = self.advance();
+      return iteratee(collection[key], key, collection);
+    }
+  }
+
+  private func initList() {
+    //
+  }
+
+  private func initMap() {
+    keys = collection.keys();
+  }
+}

@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.some returns false for empty map";
-  error: NONE;
   result: false;
 };
 

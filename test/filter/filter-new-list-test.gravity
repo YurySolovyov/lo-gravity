@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.filter always returns new list";
-  error: NONE;
   result: false;
 };
 

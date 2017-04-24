@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.map map";
-  error: NONE;
   result: '[true,true,true,true,true]';
 };
 

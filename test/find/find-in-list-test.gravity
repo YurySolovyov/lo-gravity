@@ -2,7 +2,6 @@
 
 #unittest {
   name: "Lo.find in list";
-  error: NONE;
   result: 33;
 };
 
